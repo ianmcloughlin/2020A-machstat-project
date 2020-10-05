@@ -1,0 +1,140 @@
+\documentclass[a4paper, 12pt]{scrartcl}
+  % Headers and footers.
+  \usepackage{fancyhdr}
+  % Enables the use of colour.
+  \usepackage{xcolor}
+  % Syntax high-lighting for code. Requires Python's pygments.
+  \usepackage{minted}
+  % Enables the use of umlauts and other accents.
+  \usepackage[utf8]{inputenc}
+  % Diagrams.
+  \usepackage{tikz}
+  % Settings for captions, such as sideways captions.
+  \usepackage{caption}
+  % Symbols for units, like degrees and ohms.
+  \usepackage{gensymb}
+  % Latin modern fonts - better looking than the defaults.
+  \usepackage{lmodern}
+  % Allows for columns spanning multiple rows in tables.
+  \usepackage{multirow}
+  % Better looking tables, including nicer borders.
+  \usepackage{booktabs}
+  % More math symbols.
+  \usepackage{amssymb}
+  % More math fonts, like \mathbb.
+  \usepackage{amsfonts}
+  % More math layouts, equation arrays, etc.
+  \usepackage{amsmath}
+  % More theorem environments.
+  \usepackage{amsthm}
+  % More column formats for tables.
+  \usepackage{array}
+  % Adjust the sizes of box environments.
+  \usepackage{adjustbox}
+  % Better looking single quotes in verbatim and minted environments.
+  \usepackage{upquote}
+  % Better blank space decisions.
+  \usepackage{xspace}
+  % Better looking tikz trees.
+  \usepackage{forest}
+  % URLs.
+  \usepackage[hidelinks]{hyperref}
+  % Plotting.
+  \usepackage{pgfplots}
+  % Calculates the number of pages.
+  \usepackage{lastpage}
+  % Styling the abstract.
+  \usepackage{abstract}
+
+  
+  % Various tikz libraries.
+  % For drawing mind maps.
+  \usetikzlibrary{mindmap}
+  % For adding shadows.
+  \usetikzlibrary{shadows}
+  % Extra arrows tips.
+  \usetikzlibrary{arrows.meta}
+  % Old arrows.
+  \usetikzlibrary{arrows}
+  % Automata.
+  \usetikzlibrary{automata}
+  % For more positioning options.
+  \usetikzlibrary{positioning}
+  % Creating chains of nodes on a line.
+  \usetikzlibrary{chains}
+  % Fitting node to contain set of coordinates.
+  \usetikzlibrary{fit}
+  % Extra shapes for drawing.
+  \usetikzlibrary{shapes}
+  % For markings on paths.
+  \usetikzlibrary{decorations.markings}
+  % For advanced calculations.
+  \usetikzlibrary{calc}
+  
+  % GMIT colours.
+  \definecolor{gmitblue}{RGB}{20,134,225}
+  \definecolor{gmitred}{RGB}{220,20,60}
+  \definecolor{gmitgrey}{RGB}{67,67,67}
+
+  % Set minted up.
+  \usemintedstyle{manni}
+  \setminted{baselinestretch=1.2, bgcolor=gmitgrey!10}
+
+  % Change the displayed name of the references section.
+  \renewcommand{\refname}{\selectfont\large References} 
+
+  % Heading
+  \title{\vspace{-20mm}Project 2020}
+  \author{Machine Learning and Statistics}
+  \date{Due: last commit on or before January 8\textsuperscript{th}, 2021\vspace{-6mm}}
+
+\begin{document}
+  
+  \maketitle
+
+  These are the instructions for the Project assessment for Machine Learning and Statistics in 2020.
+  The assessment is worth 50\% of the marks for the module.
+  Please read the \emph{Using git for assessments}~\cite{usinggit} document on the Moodle page which applies here.
+  As always, you must also follow the code of student conduct and the policy on plagiarism~\cite{gmitqaf}.
+
+  \section*{Instructions}
+    In this project you must create a web service that uses machine learning to make predictions based on the data set \texttt{powerproduction} available on Moodle.
+    The goal is to produce a model that accurately predicts wind turbine \texttt{power} output from wind \texttt{speed} values, as in the data set.
+    You must then develop a web service that will respond with predicted power values based on speed values sent as HTTP requests.
+    Your submission must be in the form of a git repository containing, at a minimum, the following items:
+    \begin{enumerate}
+      \item Jupyter notebook that trains a model using the data set. In the notebook you should explain your model and give an analysis of its accuracy.
+      \item Python script that runs a web service based on the model, as above.
+      \item Dockerfile to build and run the web service in a container.
+      \item Standard items in a git repository such as a README.
+    \end{enumerate}
+    To enhance your submission, you might consider developing and comparing more than one model.
+    Rest assured, all the above concepts will be explored in lecture videos and other materials in the coming semester.
+
+  \newpage
+
+  \section*{Marking scheme}
+    The following marking scheme will be used to mark your submission out of 100\%, which will then be scaled to 50\%.
+    The examiner's overall impression of your submission may influence marks in each individual component.
+    It is important that your submission provides direct evidence of each of the items listed in each category.
+    For instance, your commit history should demonstrate and provide evidence that you had a pragmatic attitude to completing the assessment.
+    Likewise, your submission should have references in it to demonstrate that you considered the literature and the work of others.
+  
+    \begin{center}
+      \begin{tabular}{llp{8.4cm}}
+        \toprule
+        25\% & \textbf{Research} & Evidence of research performed on topic; submission based on referenced literature, particularly academic literature; evidence of understanding of the documentation for any software or libraries used. \\
+        \midrule
+        25\% & \textbf{Development} & Environment can be set up as described; code works without tweaking and as described; code is efficient, clean, and clear; evidence of consideration of standards and conventions appropriate to code of this kind. \\
+        \midrule
+        25\% & \textbf{Consistency} & Evidence of planning and project management; pragmatic attitude to work as evidenced by well-considered commit history; commits are of a reasonable size; consideration of how commit history will be perceived by others. \\
+        \midrule
+        25\% & \textbf{Documentation} & Clear documentation of how to create an environment in which any code will run, how to prepare the code for running, how to run the code including setting any options or flags, and what to expect upon running the code. Concise descriptions of code in comments and README. \\
+        \bottomrule
+      \end{tabular}
+    \end{center}
+    
+  \bibliographystyle{ieeetrans}
+  \bibliography{bibliography}
+  
+\end{document}
